@@ -1,68 +1,83 @@
 import 'package:flutter/material.dart';
 
 void main() {
-  runApp(const MyApp());
+  runApp(Myapp());
 }
 
-class MyApp extends StatelessWidget {
-  const MyApp({super.key});
+class Myapp extends StatelessWidget {
+  const Myapp({super.key});
 
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Flutter Demo',
-      theme: ThemeData(
-        colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
-        useMaterial3: true,
-      ),
-      home: const MyHomePage(title: 'Flutter Demo Home Page'),
+      debugShowCheckedModeBanner: false,
+      home: HomeActivity(),
     );
   }
 }
 
-class MyHomePage extends StatefulWidget {
-  const MyHomePage({super.key, required this.title});
+class HomeActivity extends StatelessWidget {
+  const HomeActivity({super.key});
 
-  final String title;
-
-  @override
-  State<MyHomePage> createState() => _MyHomePageState();
-}
-
-class _MyHomePageState extends State<MyHomePage> {
-  int _counter = 0;
-
-  void _incrementCounter() {
-    setState(() {
-      _counter++;
-    });
+  MySnackbar(sms, context) {
+    ScaffoldMessenger.of(context).showSnackBar(SnackBar(content: Text(sms)));
   }
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        backgroundColor: Theme.of(context).colorScheme.inversePrimary,
-        title: Text(widget.title),
-      ),
-      body: Center(
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: <Widget>[
-            const Text(
-              'You have pushed the button this many times:',
-            ),
-            Text(
-              '$_counter',
-              style: Theme.of(context).textTheme.headlineMedium,
-            ),
-          ],
+        title: Text(
+          'Text',
+          style: TextStyle(color: Colors.white, fontSize: 25),
         ),
+        backgroundColor: Colors.blue,
+        centerTitle: true,
+        toolbarHeight: 70,
+        actions: [
+          IconButton(
+              onPressed: () {
+                MySnackbar('Icone tapb', context);
+              },
+              icon: Icon(Icons.mark_as_unread_sharp,
+                  color: Colors.white, size: 25))
+        ],
       ),
       floatingActionButton: FloatingActionButton(
-        onPressed: _incrementCounter,
-        tooltip: 'Increment',
-        child: const Icon(Icons.add),
+        backgroundColor: Colors.blue,
+        onPressed: () {
+          MySnackbar('Floting asctin button', context);
+        },
+        child: Icon(Icons.sms_failed_sharp, color: Colors.white),
+      ),
+      bottomNavigationBar: BottomNavigationBar(
+        backgroundColor: Colors.blue.withOpacity(0.8),
+        selectedItemColor: Colors.yellow,
+        elevation: 0.9,
+        iconSize: 25,
+        selectedFontSize: 16,
+        currentIndex: 1,
+        items: [
+          BottomNavigationBarItem(
+              icon: Icon(
+                Icons.add,
+                color: Colors.white,
+              ),
+              label: 'Add'),
+          BottomNavigationBarItem(
+              icon: Icon(
+                Icons.mail,
+                color: Colors.white,
+              ),
+              label: 'Mail'),
+          BottomNavigationBarItem(
+            icon: Icon(
+              Icons.home,
+              color: Colors.white,
+            ),
+            label: 'Home',
+          ),
+        ],
       ),
     );
   }
