@@ -51,7 +51,7 @@ class HomeActivity extends StatelessWidget {
         child: Icon(Icons.sms_failed_sharp, color: Colors.white),
       ),
       bottomNavigationBar: BottomNavigationBar(
-        backgroundColor: Colors.blue.withOpacity(0.5),
+        backgroundColor: Colors.blue.withOpacity(0.6),
         selectedItemColor: Colors.yellow,
         elevation: 0.9,
         iconSize: 25,
