@@ -51,12 +51,12 @@ class HomeActivity extends StatelessWidget {
         child: Icon(Icons.sms_failed_sharp, color: Colors.white),
       ),
       bottomNavigationBar: BottomNavigationBar(
-        backgroundColor: Colors.blue.withOpacity(0.5),
+        backgroundColor: Colors.blue.withOpacity(0.6),
         selectedItemColor: Colors.yellow,
         elevation: 0.9,
         iconSize: 25,
         selectedFontSize: 16,
-        currentIndex: 1,
+        currentIndex: 2,
         items: [
           BottomNavigationBarItem(
               icon: Icon(
@@ -78,6 +78,15 @@ class HomeActivity extends StatelessWidget {
             label: 'Home',
           ),
         ],
+        onTap: (int index) {
+          if (index == 0) {
+            MySnackbar('Index $index', context);
+          } else if (index == 1) {
+            MySnackbar('$index mail', context);
+          } else {
+            MySnackbar('Index home', context);
+          }
+        },
       ),
     );
   }
