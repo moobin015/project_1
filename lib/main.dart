@@ -1,10 +1,24 @@
 import 'package:flutter/material.dart';
-import 'package:project_1/first/sum_app.dart';
+import 'package:project_1/test_one/modul_12_1.dart';
+import 'package:project_1/test_one/test2.dart';
 
 void main() {
   runApp(
-    const Sumapp(),
+    const MyApp(),
+    // const Sumapp(),
   );
+}
+
+class MyApp extends StatelessWidget {
+  const MyApp({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return const MaterialApp(
+      debugShowCheckedModeBanner: false,
+      home: Test2(),
+    );
+  }
 }
 
 // class Myapp extends StatelessWidget {
