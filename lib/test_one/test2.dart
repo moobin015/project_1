@@ -25,6 +25,8 @@ class _Test2State extends State<Test2> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      appBar: AppBar(),
+      
       body: Padding(
         padding: const EdgeInsets.all(22),
         child: Form(

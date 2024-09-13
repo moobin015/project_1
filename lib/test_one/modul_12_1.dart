@@ -22,7 +22,7 @@ class _HomeState extends State<Home> {
   Widget build(BuildContext context) {
     return Scaffold(
       body: Padding(
-        padding: EdgeInsets.all(22),
+        padding: const EdgeInsets.all(22),
         child: buildColumn(),
       ),
     );
@@ -42,7 +42,7 @@ class _HomeState extends State<Home> {
           },
           keyboardType: TextInputType.number,
           controller: _firstContoler,
-          decoration: InputDecoration(border: OutlineInputBorder()),
+          decoration: const InputDecoration(border: OutlineInputBorder()),
         ),
         const SizedBox(height: 22),
 
@@ -50,22 +50,22 @@ class _HomeState extends State<Home> {
         TextField(
           keyboardType: TextInputType.number,
           controller: _secendContoler,
-          decoration: InputDecoration(border: OutlineInputBorder()),
+          decoration: const InputDecoration(border: OutlineInputBorder()),
         ),
         const SizedBox(height: 22),
         Row(
           mainAxisAlignment: MainAxisAlignment.spaceAround,
           children: [
-            OutlinedButton(onPressed: add, child: Text('+')),
-            OutlinedButton(onPressed: remove, child: Text('-')),
-            OutlinedButton(onPressed: into, child: Text('*')),
-            OutlinedButton(onPressed: divider, child: Text('/')),
+            OutlinedButton(onPressed: add, child: const Text('+')),
+            OutlinedButton(onPressed: remove, child: const Text('-')),
+            OutlinedButton(onPressed: into, child: const Text('*')),
+            OutlinedButton(onPressed: divider, child: const Text('/')),
           ],
         ),
         const SizedBox(height: 22),
         Text(
           'Result : ${_resutl.toStringAsFixed(3)}...',
-          style: TextStyle(color: Colors.blueAccent, fontSize: 25),
+          style: const TextStyle(color: Colors.blueAccent, fontSize: 25),
         )
       ],
     );

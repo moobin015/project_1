@@ -9,8 +9,8 @@ class Scrine_One extends StatefulWidget {
 
 class _Scrine_OneState extends State<Scrine_One> {
   ///
-  TextEditingController _first_textEditingController = TextEditingController();
-  TextEditingController _secend_textEditingController = TextEditingController();
+  final TextEditingController _first_textEditingController = TextEditingController();
+  final TextEditingController _secend_textEditingController = TextEditingController();
   double _result = 0;
 
   ///
@@ -18,7 +18,7 @@ class _Scrine_OneState extends State<Scrine_One> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Appbar'),
+        title: const Text('Appbar'),
       ),
       body: _body_start(),
     );
@@ -35,20 +35,20 @@ class _Scrine_OneState extends State<Scrine_One> {
             decoration: InputDecoration(
               focusColor: Colors.green,
               focusedBorder: OutlineInputBorder(
-                  borderSide: BorderSide(color: Colors.green, width: 1.2),
+                  borderSide: const BorderSide(color: Colors.green, width: 1.2),
                   borderRadius: BorderRadius.circular(20)),
               border:
                   OutlineInputBorder(borderRadius: BorderRadius.circular(20)),
               hintText: 'int number',
-              label: Text('Use Number'),
+              label: const Text('Use Number'),
               hintStyle: TextStyle(
                 color: Colors.black54.withOpacity(0.9),
               ),
-              labelStyle: TextStyle(color: Colors.green),
+              labelStyle: const TextStyle(color: Colors.green),
             ),
             maxLength: 5,
           ),
-          SizedBox(height: 16),
+          const SizedBox(height: 16),
 
           ///input secend
           TextField(
@@ -56,25 +56,25 @@ class _Scrine_OneState extends State<Scrine_One> {
             controller: _secend_textEditingController,
             decoration: InputDecoration(
               focusedBorder: OutlineInputBorder(
-                  borderSide: BorderSide(color: Colors.green, width: 1.2),
+                  borderSide: const BorderSide(color: Colors.green, width: 1.2),
                   borderRadius: BorderRadius.circular(20)),
               border:
                   OutlineInputBorder(borderRadius: BorderRadius.circular(20)),
               hintText: 'int number',
-              label: Text('Use Number'),
+              label: const Text('Use Number'),
               hintStyle: TextStyle(
                 color: Colors.black54.withOpacity(0.9),
               ),
-              labelStyle: TextStyle(color: Colors.green),
+              labelStyle: const TextStyle(color: Colors.green),
             ),
             maxLength: 5,
           ),
-          SizedBox(height: 16),
+          const SizedBox(height: 16),
           _bilder_icone_row(),
-          SizedBox(height: 16),
+          const SizedBox(height: 16),
           Text(
             'Result : ${_result.toStringAsFixed(2)}',
-            style: TextStyle(
+            style: const TextStyle(
                 fontSize: 22, fontWeight: FontWeight.bold, color: Colors.black),
           ),
         ],
@@ -116,42 +116,42 @@ class _Scrine_OneState extends State<Scrine_One> {
       children: [
         OutlinedButton(
           onPressed: res,
-          child: Text(
+          child: const Text(
             '+',
             style: TextStyle(
                 fontSize: 18, color: Colors.black, fontWeight: FontWeight.bold),
           ),
         ),
-        SizedBox(width: 10),
+        const SizedBox(width: 10),
         OutlinedButton(
           onPressed: () {
             remove();
           },
-          child: Text(
+          child: const Text(
             '-',
             style: TextStyle(
                 fontWeight: FontWeight.bold, fontSize: 18, color: Colors.black),
           ),
         ),
-        SizedBox(width: 10),
+        const SizedBox(width: 10),
         OutlinedButton(
           onPressed: gon,
-          child: Text(
+          child: const Text(
             '*',
             style: TextStyle(
                 fontSize: 18, color: Colors.black, fontWeight: FontWeight.bold),
           ),
         ),
-        SizedBox(width: 10),
+        const SizedBox(width: 10),
         OutlinedButton(
           onPressed: divider,
-          child: Text(
+          child: const Text(
             '/',
             style: TextStyle(
                 fontSize: 18, color: Colors.black, fontWeight: FontWeight.bold),
           ),
         ),
-        SizedBox(width: 10),
+        const SizedBox(width: 10),
       ],
     );
   }

@@ -28,18 +28,18 @@ class _HomeState extends State<HomeActivity> {
                   onPressed: () {
                     Snack('TextBTN', context);
                   },
-                  child: Text('TextBTN')),
-              SizedBox(height: 10),
+                  child: const Text('TextBTN')),
+              const SizedBox(height: 10),
               IconButton(
                   onPressed: () {
                     Snack('IconeButton', context);
                   },
                   icon: const Icon(Icons.smart_button)),
-              SizedBox(height: 10),
-              OutlinedButton(onPressed: () {Snack('OutlineButton', context);}, child: Text('OutLineButton')),
-              SizedBox(height: 10),
-              ElevatedButton(onPressed: () {Snack('ElevatedButton', context);}, child: Text('ElevatedButton')),
-              SizedBox(height: 10),
+              const SizedBox(height: 10),
+              OutlinedButton(onPressed: () {Snack('OutlineButton', context);}, child: const Text('OutLineButton')),
+              const SizedBox(height: 10),
+              ElevatedButton(onPressed: () {Snack('ElevatedButton', context);}, child: const Text('ElevatedButton')),
+              const SizedBox(height: 10),
             ],
           ),
         ),
